@@ -1,10 +1,11 @@
 <script setup lang="ts">
+import { Main } from '../layouts'
+
 </script>
 
 <template>
-	<div>
-		Done
-	</div>
+	<Main>
+	</Main>
 </template>
 
 <style lang="scss" scoped>
