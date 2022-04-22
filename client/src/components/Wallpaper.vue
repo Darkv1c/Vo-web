@@ -2,7 +2,7 @@
 import { Ref, ref } from 'vue';
 
 const props = defineProps({
-    linesNumber: { type: Number, default: 20 }
+    linesNumber: { type: Number, default: 50 }
 })
 
 const text:Ref<String[]> = ref([])
@@ -10,7 +10,7 @@ const text:Ref<String[]> = ref([])
 function fillText() {
     text.value = text.value.map(line => { 
         const charNumber = Math.random() * 94 + 32;
-        let response = line.length > 100 ? line.slice(0, -5) : line
+        let response = line.length > 200 ? line.slice(0, -5) : line
         response = String.fromCharCode(charNumber) + response
         return response
      })
@@ -20,11 +20,11 @@ for (let index = 0; index < props.linesNumber; index++) {
     text.value[index] = ''
 }
 
-let filltextPromise = setInterval(fillText, 50) //100
+let filltextPromise = setInterval(fillText, 20)
 </script>
 
 <template>
-    <div class="main-bg-container">
+    <div class="main-bg-container container">
         <div class="main-bg">
             <div class="bg-string" v-for="(string, index) in text" :key="index">{{string}}</div>
         </div>
@@ -43,18 +43,20 @@ let filltextPromise = setInterval(fillText, 50) //100
         max-width: 100%;
         overflow: hidden;
         font-family: 'Orbitron', cursive;
-        color: lightblue;
-        font-size: 20px;
+        color: $color-5;
+        font-size: 12px;
         font-weight: 600;
         transform: rotateZ(90deg);
         pointer-events: none;
+        z-index: -10;
     }
     .main-bg-container{
         min-height: 100%;
         min-width: 100%;
+        position: relative;
     }
     .bg-string{
-        line-height: 100px;
+        line-height: 40px;
         overflow-inline: hidden;
         overflow: hidden;
         text-overflow: clip;

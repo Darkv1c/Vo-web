@@ -1,14 +1,22 @@
 <template>
-  <div class="main-container">
-    <router-view/>
-  </div>
+  <Wallpaper>
+    <NavBar />
+    <router-view />
+  </Wallpaper>
 </template>
 
 <style lang="scss">
-  .main-container{
-    display: flex;
-    flex-direction: column;
-    min-width: 100vw;
-    min-height: 100vh;
-  }
+body {
+  margin: 0;
+  min-height: 100vh;
+  @extend .container
+}
+
+#app {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 100vw;
+  flex: 1;
+}
 </style>

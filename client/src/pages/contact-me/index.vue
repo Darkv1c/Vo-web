@@ -3,7 +3,9 @@
 </script>
 
 <template>
-    
+    <Window>
+        
+    </Window>
 </template>
 
 <style scoped>
