@@ -36,17 +36,18 @@ let filltextPromise = setInterval(fillText, 20)
     @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
     .main-bg{
         position: fixed;
+        display: flex;
+
         background-color: $color-13;
-        min-height: 100vw;
-        min-width: 100%;
-        max-height: 100vw;
-        max-width: 100%;
+        min-height: 100vh;
+        min-width: 100vw;
+        max-height: 100vh;
+        max-width: 100vw;
         overflow: hidden;
         font-family: 'Orbitron', cursive;
         color: $color-5;
         font-size: 12px;
         font-weight: 600;
-        transform: rotateZ(90deg);
         pointer-events: none;
         z-index: -10;
     }
@@ -56,10 +57,12 @@ let filltextPromise = setInterval(fillText, 20)
         position: relative;
     }
     .bg-string{
+        min-width: 30px;
         line-height: 40px;
         overflow-inline: hidden;
         overflow: hidden;
         text-overflow: clip;
         white-space: nowrap;
+        writing-mode: vertical-lr;
     }
 </style>

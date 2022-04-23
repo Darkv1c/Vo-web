@@ -112,7 +112,7 @@ const techList = [
         grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr));
         gap: 24px 32px;
         box-sizing: border-box;
-        padding: 24px;
+        padding: 24px 40px;
         min-width: 100%;
     }
     .tech-container{
