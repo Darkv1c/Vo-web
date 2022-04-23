@@ -1,4 +1,29 @@
 <script setup lang="ts">
+import { computed, ref } from 'vue';
+import { useRouter } from 'vue-router';
+import Button from '../../components/Button.vue';
+
+const router = useRouter()
+const fullPhrase = 'Llevemos tus proyectos más allá de los limites de la imaginación hasta volverlos realidad.'
+let currentLetter = ref(0)
+let addLetterInterval:any
+
+const phrase = computed(() => { 
+    return fullPhrase.slice(0, currentLetter.value)
+ })
+
+function addLetter(){
+    if (currentLetter.value < fullPhrase.length){
+        currentLetter.value++
+    } else {
+        clearInterval(addLetterInterval)
+    }
+}
+function goToContact(){
+    router.push('/contact-me')
+}
+
+setTimeout(() => {addLetterInterval = setInterval(addLetter, 50)}, 2000)
 
 </script>
 
@@ -6,10 +31,10 @@
     <Window>
         <div class="about-me-container">
             <div class="about-me-info">
-                <H1>Esto es un titulo</H1>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi quisquam pariatur saepe nemo cumque
-                    dolore minus perferendis iste voluptatem, temporibus laboriosam omnis velit corrupti eligendi sunt
-                    quae dolor dolores nesciunt.</p>
+                <h1>Víctor Orellano</h1>
+                <h4>Desarrollador web</h4>
+                <p>{{phrase}}<span class="about-me-dash">_</span></p>
+                <Button style="margin: auto" @click="goToContact">Contactame</Button>
             </div>
             <div class="about-me-image" />
         </div>
@@ -34,13 +59,32 @@
     box-sizing: border-box;
     padding: 24px;
     padding-right: 48px;
-    justify-content: center;
-
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    h4{
+       margin-block: 0;
+    }
     p,
-    h1 {
+    h1, h4 {
         text-align: center;
     }
-
-    ;
+    h4{
+        color: $color-16;
+    }
+    .about-me-dash{
+        animation: fade;
+        animation-iteration-count: infinite;
+        animation-direction: alternate-reverse;
+        animation-duration: 0.5s;
+    }
+}
+@keyframes fade { 
+    from{
+        opacity: 1;
+    } 
+    to{
+        opacity: 0
+    }
 }
 </style>

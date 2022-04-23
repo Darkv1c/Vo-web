@@ -1,7 +1,8 @@
 <script setup lang="ts">
 const options: {label: string, action: string}[] = [
   {label: 'Sobre mi', action: '/about-me'},
-  {label: 'Proyectos', action: '/welcome'}
+  {label: 'Proyectos', action: '/welcome'},
+  {label: 'Contacto', action: '/contact-me'},
 ]
 </script>
 
