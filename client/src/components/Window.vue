@@ -33,7 +33,7 @@ function closeWindow(){
 
 .action-buttons {
     display: flex;
-    position: absolute;
+    position: fixed;
     right: 0;
     padding: 10px 40px;
     border-bottom-left-radius: 8px;

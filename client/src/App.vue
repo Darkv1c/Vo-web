@@ -36,6 +36,23 @@ body {
   overflow: hidden;
 }
 
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 16px transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba($color-11, 0.5);
+    border-radius: 50px;
+
+    :hover {
+        background-color: rgba($color-11, 1);
+    }
+}
+
 $animetion-time: 0.5s;
 $animation-delay: 0.1s;
 .zoom-enter-active{
