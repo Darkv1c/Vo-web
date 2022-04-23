@@ -23,10 +23,12 @@ function closeWindow(){
     display: flex;
     position: relative;
     flex: 1;
+    max-height: min-content;
     margin: 1% 2%;
     background-color: rgba($color: $color-7, $alpha: .7);
     border-radius: 8px;
     backdrop-filter: blur(8px);
+    overflow-y: auto;
 }
 
 .action-buttons {

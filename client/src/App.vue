@@ -1,7 +1,8 @@
 <script setup lang="ts">
 const options: {label: string, action: string}[] = [
   {label: 'Sobre mi', action: '/about-me'},
-  {label: 'Proyectos', action: '/welcome'},
+  {label: 'Proyectos', action: '/projects'},
+  {label: 'Tecnologias', action: '/technologies'},
   {label: 'Contacto', action: '/contact-me'},
 ]
 </script>
@@ -31,6 +32,7 @@ body {
   display: flex;
   flex-direction: column;
   flex: 1;
+  max-height: 100vh;
   overflow: hidden;
 }
 
