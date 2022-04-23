@@ -14,6 +14,7 @@ function closeWindow(){
                 Close
             </span>
         </span>
+        <slot/>
     </div>
 </template>
 
@@ -23,9 +24,9 @@ function closeWindow(){
     position: relative;
     flex: 1;
     margin: 1% 2%;
-    background-color: rgba($color: $color-9, $alpha: .8);
-    border: 5px solid $color-5;
-    backdrop-filter: blur(4px);
+    background-color: rgba($color: $color-7, $alpha: .7);
+    border-radius: 8px;
+    backdrop-filter: blur(8px);
 }
 
 .action-buttons {
@@ -33,12 +34,23 @@ function closeWindow(){
     position: absolute;
     right: 0;
     padding: 10px 40px;
-    border-bottom: 5px solid $color-5;
-    border-left: 5px solid $color-5;
     border-bottom-left-radius: 8px;
+    cursor: pointer;
+    background-color: $color-16;
+    opacity: .6;
+    transition: all 0.3s ease;
+    &:hover{
+        opacity: 1;
+    }
 }
 
 .material-symbols-outlined{
     color: white;
+}
+
+.window-subcontainer{
+    margin: 24px;
+    display: flex;
+    flex: 1;
 }
 </style>
