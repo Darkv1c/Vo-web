@@ -4,7 +4,7 @@ import { useRouter } from 'vue-router';
 import Button from '../../components/Button.vue';
 
 const router = useRouter()
-const fullPhrase = 'Llevemos tus proyectos más allá de los limites de la imaginación hasta volverlos realidad.'
+const fullPhrase = 'Llevemos tus proyectos más allá de los limites de la imaginación.'
 let currentLetter = ref(0)
 let addLetterInterval:any
 
@@ -34,7 +34,7 @@ setTimeout(() => {addLetterInterval = setInterval(addLetter, 50)}, 2000)
                 <h1>Víctor Orellano</h1>
                 <h4>Desarrollador web</h4>
                 <p>{{phrase}}<span class="about-me-dash">_</span></p>
-                <Button style="margin: auto" @click="goToContact">Contactame</Button>
+                <Button style="margin: auto" @click="goToContact">Contáctame</Button>
             </div>
             <div class="about-me-image" />
         </div>

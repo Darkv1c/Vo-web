@@ -11,7 +11,7 @@ function closeWindow(){
     <div class="window">
         <span class="action-buttons" @click="closeWindow">
             <span class="material-symbols-outlined">
-                Close
+                Cerrar
             </span>
         </span>
         <slot/>
@@ -21,9 +21,7 @@ function closeWindow(){
 <style scoped lang="scss">
 .window {
     display: flex;
-    position: relative;
     flex: 1;
-    max-height: min-content;
     margin: 1% 2%;
     background-color: rgba($color: $color-7, $alpha: .7);
     border-radius: 8px;

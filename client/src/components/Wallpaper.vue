@@ -2,7 +2,7 @@
 import { Ref, ref } from 'vue';
 
 const props = defineProps({
-    linesNumber: { type: Number, default: 50 }
+    linesNumber: { type: Number, default: 100 }
 })
 
 const text:Ref<String[]> = ref([])
@@ -37,7 +37,7 @@ let filltextPromise = setInterval(fillText, 20)
     .main-bg{
         position: fixed;
         display: flex;
-
+        justify-content: center;
         background-color: $color-13;
         min-height: 100vh;
         min-width: 100vw;
@@ -55,10 +55,12 @@ let filltextPromise = setInterval(fillText, 20)
         min-height: 100%;
         min-width: 100%;
         position: relative;
+        display: flex;
     }
     .bg-string{
         min-width: 30px;
-        line-height: 40px;
+        font-size: 12px;
+        line-height: 10px;
         overflow-inline: hidden;
         overflow: hidden;
         text-overflow: clip;
